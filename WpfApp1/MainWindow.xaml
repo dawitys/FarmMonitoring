@@ -1,0 +1,66 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Farm Monitoring and managment" Height="700" Width="1200">
+    <Grid>
+        <Grid.Background>
+           <!--  <ImageBrush ImageSource="resource/cover2.jpg"/>  -->
+            <ImageBrush ImageSource="C:\Users\MY\source\repos\WpfApp1\WpfApp1\resource\cover2.jpg"/>
+
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:Card BorderThickness="2" Background="Lavender" materialDesign:ShadowAssist.Darken="True" Grid.Column="1" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:ShadowAssist.ShadowEdges="Bottom,Left" Padding="32" Margin="46,232,342,0" Grid.RowSpan="3">
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label FontSize="20"  Margin="0,0,0,30" Grid.Row="0">Please enter your credentials</Label>
+                <Grid Margin="0,0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="Account" Height="40" Width="30" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,10,0 "/>
+                    <TextBox  x:Name="usernameBox" Grid.Column="1" FontSize="20" materialDesign:HintAssist.Hint="email" Margin="10,0,-10,0"/>
+                </Grid>
+                <Grid Grid.Row="2" Margin="0,12,0,80" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="key" Height="40" Width="30" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,10,0" />
+                    <PasswordBox Grid.Column="1"  FontSize="20" x:Name="PasswordBox" materialDesign:HintAssist.Hint="Password" Margin="10,0,0,0" HorizontalAlignment="Left" Width="297" />
+                </Grid>
+                <Button Margin="181,90,10,10" Grid.Row="3"  Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Width="150"
+    ToolTip="Resource name: MaterialDesignRaisedLightButton"
+    materialDesign:RippleAssist.Feedback="Aquamarine" Click="Login_Button_Click">
+                    Login
+                </Button>
+
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>
